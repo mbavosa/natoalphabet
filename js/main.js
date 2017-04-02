@@ -1,35 +1,47 @@
-function(){
-var input = document.getElementById('usertext')
+function () {
+  var input = document.getElementById('usertext')
+  var natoAlphabet = {
+      a:'alpha',
+      b:'bravo',
+      c:'charlie',
+      d:'delta',
+      e:'echo',
+      f:'foxtrot',
+      g:'golf',
+      h:'hotel',
+      i:'india',
+      j:'juliet',
+      k:'kilo',
+      l:'lima',
+      m:'mike',
+      n:'november',
+      o:'oscar',
+      p:'papa',
+      q:'quebec',
+      r:'romeo',
+      s:'sierra',
+      t:'tango',
+      u:'uniform',
+      v:'victor',
+      w:'whiskey',
+      x:'xray',
+      y:'yankee',
+      z:'zulu'
+    }
 
-input.addEventListener('keypress', eventHandler, false)
+  input.addEventListener('keypress', eventHandler, false)
 
-var natoAlphabet = {
-    a:'alpha',
-    b:'bravo',
-    c:'charlie',
-    d:'delta',
-    e:'echo',
-    f:'foxtrot',
-    g:'golf',
-    h:'hotel',
-    i:'india',
-    j:'juliet',
-    k:'kilo',
-    l:'lima',
-    m:'mike',
-    n:'november',
-    o:'oscar',
-    p:'papa',
-    q:'quebec',
-    r:'romeo',
-    s:'sierra',
-    t:'tango',
-    u:'uniform',
-    v:'victor',
-    w:'whiskey',
-    x:'xray',
-    y:'yankee',
-    z:'zulu'
+  function eventHandler (event) {
+    if (event.which === 13) {
+      message = input.value
+      writeToDocument(event, message, natoAlphabet)
+      }
+    }
+
+  function writeToDocument (event, message) {
+    var column = document.querySelector('.result')
+    var p document.createElement('p')
+    p.innerHTML = message
+    column.appendChild(p)
   }
-
 }
